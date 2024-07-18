@@ -117,6 +117,8 @@ void check_for_char(int p) {
                 prev = 0;
                 lcd.setCursor(0, 0);
                 lcd.write(byte(0));
+              	lcd.setCursor(0, 0);
+                lcd.write(byte(0));
             }
             else if (prev == -1) {
                 arr[1][0]++;
@@ -157,13 +159,13 @@ void game_over() {
     lcd.print("OVER");
     delay(500);
     lcd.clear();
-    lcd.setCursor(1, 0);
-    lcd.print("YOUR SCORE IS ");
-    Serial.print("Game Over!! Your score is ");
+    lcd.setCursor(0, 0);
+    lcd.print("YOUR SCORE: ");
+    Serial.print("Game Over!! Your score: ");
     Serial.println(score);
     lcd.print(score);
   	lcd.setCursor(1,1);
-  	lcd.print("HIGH SCORE IS ");
+  	lcd.print("HIGH SCORE: ");
   	lcd.print(highScore());
     delay(2000);
 }
